@@ -1,6 +1,6 @@
 package io.github.navpil.esoteric.collections;
 
-public class AllowCheckImpl implements AllowCheck {
+public class BooleanBasedSimpleAllowCheck implements AllowCheck {
 
     private final boolean sizeForbidden;
     private final boolean containsForbidden;
@@ -10,7 +10,7 @@ public class AllowCheckImpl implements AllowCheck {
     private final boolean getForbidden;
     private final boolean setForbidden;
 
-    private AllowCheckImpl(boolean sizeForbidden, boolean containsForbidden, boolean iterationForbidden, boolean addForbidden, boolean removeForbidden, boolean getForbidden, boolean setForbidden) {
+    private BooleanBasedSimpleAllowCheck(boolean sizeForbidden, boolean containsForbidden, boolean iterationForbidden, boolean addForbidden, boolean removeForbidden, boolean getForbidden, boolean setForbidden) {
         this.sizeForbidden = sizeForbidden;
         this.containsForbidden = containsForbidden;
         this.iterationForbidden = iterationForbidden;
@@ -121,14 +121,14 @@ public class AllowCheckImpl implements AllowCheck {
             return this;
         }
 
-        public AllowCheckImpl create() {
+        public BooleanBasedSimpleAllowCheck create() {
             if (setForbidden == null) {
                 setForbidden = removeForbidden || addForbidden;
             }
             if (getForbidden == null) {
                 getForbidden = containsForbidden;
             }
-            return new AllowCheckImpl(sizeForbidden, containsForbidden, iterationForbidden, addForbidden, removeForbidden, getForbidden, setForbidden);
+            return new BooleanBasedSimpleAllowCheck(sizeForbidden, containsForbidden, iterationForbidden, addForbidden, removeForbidden, getForbidden, setForbidden);
         }
     }
 }

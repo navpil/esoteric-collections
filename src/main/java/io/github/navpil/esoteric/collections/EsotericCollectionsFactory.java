@@ -12,7 +12,7 @@ public class EsotericCollectionsFactory {
      * But it's generous enough to let you know the size.
      * One may always use reflection for getting hold of elements.
      */
-    static final AllowCheckImpl GREEDY_CHECK = AllowCheckImpl
+    static final BooleanBasedSimpleAllowCheck GREEDY_CHECK = BooleanBasedSimpleAllowCheck
             .getBuilder()
             .getForbidden()
             .removeForbidden()
@@ -21,13 +21,13 @@ public class EsotericCollectionsFactory {
             .setForbidden()
             .create();
 
-    static final AllowCheckImpl ONLY_SHRINKING = AllowCheckImpl
+    static final BooleanBasedSimpleAllowCheck ONLY_SHRINKING = BooleanBasedSimpleAllowCheck
             .getBuilder()
             .addForbidden()
             .setForbidden()
             .create();
 
-    static final AllowCheckImpl SIZE_FORBIDDEN = AllowCheckImpl
+    static final BooleanBasedSimpleAllowCheck SIZE_FORBIDDEN = BooleanBasedSimpleAllowCheck
             .getBuilder()
             .sizeForbidden()
             .create();
@@ -35,7 +35,7 @@ public class EsotericCollectionsFactory {
     /**
      * The least secure collections - they allow all methods, including add and remove
      */
-    static final AllowCheckImpl ALLOW_ALL = AllowCheckImpl
+    static final BooleanBasedSimpleAllowCheck ALLOW_ALL = BooleanBasedSimpleAllowCheck
             .getBuilder()
             .create();
 
@@ -46,7 +46,7 @@ public class EsotericCollectionsFactory {
      * @param <T>
      */
     public static <T> List<T> createForbidAllOperationsList(T ... objects) {
-        return new ConditionalListWrapper<>(new ArrayList<>(Arrays.asList(objects)), AllowCheckImpl.getBuilder()
+        return new ConditionalListWrapper<>(new ArrayList<>(Arrays.asList(objects)), BooleanBasedSimpleAllowCheck.getBuilder()
                 .addForbidden()
                 .getForbidden()
                 .iterationForbidden()

@@ -26,6 +26,7 @@ You should know the key to get the value, full stop.
  - HideMap - adds a `hide` method for uniterable keys
  - SplitByHalfList - allows to split the list exactly into 2 parts
  - SplitByPrimeList - allows to split the list exactly by lowest prime
+ - DoNotWorkOnWeekendsCollections - throws exceptions for every mutable operation on Saturdays and on every operation on Sundays
 
 ## Waiting for implementation
 
@@ -33,7 +34,6 @@ You should know the key to get the value, full stop.
  - HardcoreImmutableCollection (checks for clone, copy constructor or Serializable, otherwise throws)
  - N2List - guarantees O(n^2) performance on all operations. Can be used for finding weak places.
  - UnorderedList - guarantees that the list will never keep the order of elements added
- - DoNotWorkOnWeekendsCollections - throws exceptions for every mutable operation on Saturdays and on every operation on Sundays 
 
 ### Actually useful
 
