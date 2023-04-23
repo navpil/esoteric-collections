@@ -21,12 +21,18 @@ Removal is also not possible.
  - UniterableMap - keySet() and entrySet() unavailable, only get() is possible
 Also you won't find out what is the size of this collection.
 You should know the key to get the value, full stop.
+ - DoNotWorkOnWeekendsCollections - throws exceptions for every mutable operation on Saturdays and on every operation on Sundays
+
+Ever wished you could perfectly split a collection? 
+Here are two collections which might help you:
+
+ - SplitByHalfList - allows to split the list exactly into 2 parts
+ - SplitByPrimeList - allows to split the list exactly by lowest prime
+
+Other interesting collections:
 
  - Max size collection (removes random element on .add())
  - HideMap - adds a `hide` method for uniterable keys
- - SplitByHalfList - allows to split the list exactly into 2 parts
- - SplitByPrimeList - allows to split the list exactly by lowest prime
- - DoNotWorkOnWeekendsCollections - throws exceptions for every mutable operation on Saturdays and on every operation on Sundays
 
 ## Waiting for implementation
 
@@ -38,3 +44,13 @@ You should know the key to get the value, full stop.
 ### Actually useful
 
  - SortedBag (similar to a TreeSet with duplicate elements) 
+
+## Time
+
+If you fail on `java.lang.ExceptionInInitializerError` it maybe because you're using the outdated timezone list.
+It should be Europe/Kyiv, not Europe/Kiev.
+Download [Oracle's TZUpdater util](https://www.oracle.com/java/technologies/downloads/tools/#TZUpdater) and update your java with this line:
+
+    java -jar tzupdater.jar --location
+
+Read more in [TZUpdater README](https://www.oracle.com/java/technologies/javase/tzupdater-readme.html)

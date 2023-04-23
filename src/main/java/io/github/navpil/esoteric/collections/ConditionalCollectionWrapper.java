@@ -10,7 +10,7 @@ public class ConditionalCollectionWrapper<T> implements Collection<T> {
 
     public ConditionalCollectionWrapper(Collection<T> wrapped, AllowCheck allowCheck) {
         this.wrapped = wrapped;
-        this.allowCheck = allowCheck;
+        this.allowCheck = allowCheck == null ? EsotericCollectionsFactory.ALLOW_ALL : allowCheck;
     }
 
     @Override

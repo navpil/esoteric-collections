@@ -9,6 +9,9 @@ import java.time.ZonedDateTime;
 
 public class UkrainianHolidayCheck extends HolidayCheck {
 
+    //Kyiv, not Kiev.
+    //If you fail on java.lang.ExceptionInInitializerError, update your Java timezones with Oracle's TZUpdater util
+    // Download TZUpdater and run "java -jar tzupdater.jar --location"
     public static final ZoneId UKRAINE_TIMEZONE = ZoneId.of("Europe/Kyiv");
 
     @Override
