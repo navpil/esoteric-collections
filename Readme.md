@@ -33,13 +33,15 @@ Other interesting collections:
 
  - Max size collection (removes random element on .add())
  - HideMap - adds a `hide` method for uniterable keys
+ - UnorderedBag - a collection which guarantees that it will not keep the order of elements added.
+Technically that's a `List`, but it violates List's contract so much, it could not call itself an `UnorderedList`
+even though it really wanted to.
 
 ## Waiting for implementation
 
  - NullOnlyDeque
  - HardcoreImmutableCollection (checks for clone, copy constructor or Serializable, otherwise throws)
  - N2List - guarantees O(n^2) performance on all operations. Can be used for finding weak places.
- - UnorderedList - guarantees that the list will never keep the order of elements added
 
 ### Actually useful
 
