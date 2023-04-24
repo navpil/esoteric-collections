@@ -19,6 +19,9 @@ public class NullOnlySet<T> extends AbstractSet<T> {
 
     @Override
     public boolean add(T t) {
+        if (t != null) {
+            throw new PointerException();
+        }
         if (containsElement) {
             return false;
         } else {

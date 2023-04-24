@@ -16,8 +16,9 @@ public class NullOnlyList<T> extends AbstractList<T> {
         if (t == null) {
             size++;
             return true;
+        } else {
+            throw new PointerException();
         }
-        return false;
     }
 
     @Override
