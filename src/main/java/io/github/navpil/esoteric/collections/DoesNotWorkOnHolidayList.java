@@ -11,14 +11,14 @@ import java.util.List;
  * but since this collection does not drink, it has no hangovers on 1st of January and is fine with working this day.
  * @param <T>
  */
-public class DoesNotWorkOnHolidayException<T> extends ConditionalListWrapper<T> {
+public class DoesNotWorkOnHolidayList<T> extends ConditionalListWrapper<T> {
 
     private static final AllowCheck HOLIDAY_CHECK = new HolidayAllowCheck(new UkrainianHolidayCheck());
 
-    public DoesNotWorkOnHolidayException(List<T> wrapped) {
+    public DoesNotWorkOnHolidayList(List<T> wrapped) {
         super(wrapped, HOLIDAY_CHECK);
     }
-    public DoesNotWorkOnHolidayException() {
+    public DoesNotWorkOnHolidayList() {
         this(new ArrayList<>());
     }
 }
