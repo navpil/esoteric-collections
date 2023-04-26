@@ -31,8 +31,13 @@ Here are two collections which might help you:
 
 Other interesting collections:
 
+ - HardcoreImmutableCollection - will throw if passed a mutable class as a parameter
+ - N2List - guarantees at least O(n^2) performance on all operations and n^2 memory requirements.
+Can be used for finding weak places.
  - Max size collection (removes random element on .add())
- - HideMap - adds a `hide` method for uniterable keys
+ - HideMap - adds a `hide` method for uniterable keys.
+Having uniterable keys adds an extra layer of security.
+Use UniterableMap for even higher security. 
  - UnorderedBag - a collection which guarantees that it will not keep the order of elements added.
 Technically that's a `List`, but it violates List's contract so much, it could not call itself an `UnorderedList`
 even though it really wanted to.
@@ -40,8 +45,6 @@ even though it really wanted to.
 ## Waiting for implementation
 
  - NullOnlyDeque
- - HardcoreImmutableCollection (checks for clone, copy constructor or Serializable, otherwise throws)
- - N2List - guarantees O(n^2) performance on all operations. Can be used for finding weak places.
 
 ### Actually useful
 

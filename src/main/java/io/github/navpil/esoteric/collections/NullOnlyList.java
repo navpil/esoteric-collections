@@ -12,10 +12,9 @@ public class NullOnlyList<T> extends AbstractList<T> {
     private int size;
 
     @Override
-    public boolean add(T t) {
+    public void add(int index, T t) {
         if (t == null) {
             size++;
-            return true;
         } else {
             throw new PointerException();
         }

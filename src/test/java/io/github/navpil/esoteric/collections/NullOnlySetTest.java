@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Collection;
 import java.util.Iterator;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 class NullOnlySetTest {
 
     @Test
@@ -15,7 +17,7 @@ class NullOnlySetTest {
             set.add(null);
         }
 
-        set.add("Hello world");
+        assertThrows(PointerException.class, () -> set.add("Hello world"));
 
         assert set.size() == 1;
 

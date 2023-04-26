@@ -1,50 +1,44 @@
 package io.github.navpil.esoteric.collections;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-class NullOnlyListTest {
+class N2ListTest {
 
     @Test
     void sanityCheck() {
-        List<String> list = new NullOnlyList<>();
+        List<String> list = new N2List<>();
 
         for (int i = 0; i < 5; i++) {
-            list.add(null);
+            list.add("String" + i);
         }
-
-        assertThrows(PointerException.class, () -> list.add("Hello world"));
 
         assert list.size() == 5;
 
-        for (int i = 0; i < 3; i++) {
-            boolean removed = list.remove(null);
-            assert removed;
+        for (int i = 3; i >= 1; i--) {
+            String removed = list.remove(i);
         }
 
         assert list.size() == 2;
 
-        list.remove(0);
+        list.remove(1);
 
         assert list.size() == 1;
 
         for (String s : list) {
-            assert s == null;
+            Assertions.assertEquals("String0", s);
         }
 
         Iterator<String> iterator = list.iterator();
         assert iterator.hasNext();
-        assert iterator.next() == null;
+        assert "String0".equals(iterator.next());
 
         iterator.remove();
 
         assert list.isEmpty();
-
-
     }
 
 }
