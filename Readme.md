@@ -7,8 +7,9 @@ But what if the only thing you need to store are nulls?
 These collections might help you.
 They are very space efficient, optimized for null storage.
 
- - NullOnlyList - a very space efficient collection to store only nulls
- - NullOnlySet - a very space efficient collection to store only nulls
+ - NullOnlyList - memory optimized list to store only nulls
+ - NullOnlySet - memory optimized set to store only nulls
+ - NullOnlyDeque - memory optimized deque to store nulls only
 
 Following collections restrict usage for some methods due to security reasons or personal considerations
 
@@ -41,14 +42,6 @@ Use UniterableMap for even higher security.
  - UnorderedBag - a collection which guarantees that it will not keep the order of elements added.
 Technically that's a `List`, but it violates List's contract so much, it could not call itself an `UnorderedList`
 even though it really wanted to.
-
-## Waiting for implementation
-
- - NullOnlyDeque
-
-### Actually useful
-
- - SortedBag (similar to a TreeSet with duplicate elements) 
 
 ## Time
 
