@@ -5,6 +5,10 @@ import java.util.List;
 
 import static io.github.navpil.esoteric.collections.MutableClassHelper.isMutableClass;
 
+/**
+ * Will throw if passed a mutable class as a member
+ * @param <T>
+ */
 public class HardcoreImmutableList<T> extends ConditionalListWrapper<T> {
     public HardcoreImmutableList(List<T> wrapped) {
         super(new ArrayList<>(throwIfHasMutableElements(wrapped)), BooleanBasedSimpleAllowCheck.getBuilder()

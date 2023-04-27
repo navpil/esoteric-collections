@@ -6,6 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * keySet() and entrySet() unavailable, only get() is possible
+ * Also you won't find out what is the size of this collection.
+ * You should know the key to get the value, full stop.
+ * @param <K>
+ * @param <V>
+ */
 public class UniterableMap<K, V> implements Map<K, V> {
 
     private final Map<K,V> wrapped;

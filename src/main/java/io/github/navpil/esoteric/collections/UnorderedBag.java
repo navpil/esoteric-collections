@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
 
+/**
+ * A collection which guarantees that it will not keep the order of elements added.
+ * Technically that's a `List`, but it violates List's contract so much, it could not call itself an `UnorderedList`
+ * even though it really wanted to.
+ * @param <T>
+ */
 public class UnorderedBag<T> extends ArrayList<T> {
 
     private Random random = new Random();

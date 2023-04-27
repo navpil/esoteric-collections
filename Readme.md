@@ -32,7 +32,7 @@ Here are two collections which might help you:
 
 Other interesting collections:
 
- - HardcoreImmutableCollection - will throw if passed a mutable class as a parameter
+ - HardcoreImmutableCollection - will throw if passed a mutable class as a member
  - N2List - guarantees at least O(n^2) performance on all operations and n^2 memory requirements.
 Can be used for finding weak places.
  - Max size collection (removes random element on .add())

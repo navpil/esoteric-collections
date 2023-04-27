@@ -6,6 +6,10 @@ import java.util.Deque;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Memory optimized deque to store nulls only
+ * @param <E>
+ */
 public class NullOnlyDeque<E> extends AbstractQueue<E> implements Deque<E> {
 
     private int size;

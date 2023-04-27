@@ -7,6 +7,10 @@ import java.util.Random;
 
 import static io.github.navpil.esoteric.collections.EsotericCollectionsFactory.ALLOW_ALL;
 
+/**
+ * Removes random element on .add() if capacity is exceeded
+ * @param <T>
+ */
 public class MaxSizeList<T> extends ConditionalListWrapper<T> {
 
     private static final int DEFAULT_MAX_SIZE = 42;

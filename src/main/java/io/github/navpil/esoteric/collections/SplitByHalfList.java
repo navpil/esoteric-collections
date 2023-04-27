@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Allows to split the list exactly into 2 parts
+ * @param <T>
+ */
 public class SplitByHalfList<T> extends ConditionalListWrapper<T> {
 
     public SplitByHalfList() {

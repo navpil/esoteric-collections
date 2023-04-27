@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Allows to split the list exactly by lowest prime
+ * @param <T>
+ */
 public class SplitByPrimeList<T> extends ConditionalListWrapper<T> {
 
     public SplitByPrimeList() {

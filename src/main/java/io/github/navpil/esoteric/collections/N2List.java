@@ -4,6 +4,11 @@ import java.util.AbstractList;
 import java.util.Collection;
 import java.util.Iterator;
 
+/**
+ * Guarantees at least O(n^2) performance on all operations and n^2 memory requirements.
+ * Can be used for finding weak places.
+ * @param <E>
+ */
 public class N2List<E> extends AbstractList<E> {
 
     private E[][] elements;
